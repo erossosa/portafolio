@@ -1,0 +1,313 @@
+{
+  "sections": [
+    {
+      "id": "atd",
+      "title": "ATD",
+      "items": [
+        {
+          "id": "informe-atd-295",
+          "name": "Informe ATD 29/5",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1p7awYhxm6XGZEnIsDXcD-ZH7ODGz24QKI0g-8N7-AK8/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "informe-atd-89",
+          "name": "Informe ATD 8/9",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1ZWVJeaACp-cLqHhxly03MKTGWnNW0cIfZVbBHTdgzPg/edit?usp=drive_link",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "devoluciones",
+      "title": "Devoluciones",
+      "items": [
+        {
+          "id": "1ª-devolución",
+          "name": "1ª Devolución",
+          "type": "nan",
+          "url": "https://docs.google.com/spreadsheets/d/1W98_Gh_A5BcbaiLG7hObdFUk9xEXozri/edit?usp=sharing&ouid=106145569439691380442&rtpof=true&sd=true",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "2ª-devolución",
+          "name": "2ª Devolución",
+          "type": "nan",
+          "url": "https://docs.google.com/spreadsheets/d/1sSOstPCAuR3CVmQU08-g5dbCi5LDeJTf/edit?usp=sharing&ouid=106145569439691380442&rtpof=true&sd=true",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "coevaluación-pdf",
+          "name": "Coevaluación PDF",
+          "type": "nan",
+          "url": "https://drive.google.com/file/d/1bRBHFUg_7Jyloq9TOH-F2rq-nrSuLG41/view?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "informes-de-grupo",
+      "title": "Informes de Grupo",
+      "items": [
+        {
+          "id": "primera-reunión",
+          "name": "Primera reunión",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1I4ZK6pID7YeSvi_ZiC76CSz8lXKlYzBwY6HA-LJF1sM/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "segunda-reunión",
+          "name": "Segunda reunión",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1N3x-3IKX9ArtXxskf2W3QxD00w-4vg6GGoXZsxOJCqY/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "línea-de-tiempo",
+      "title": "Línea de Tiempo",
+      "items": [
+        {
+          "id": "clases-destacadas-línea-de-tiempo",
+          "name": "Clases Destacadas (línea de tiempo)",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "materiales-didácticos-prácticos",
+      "title": "Materiales Didácticos – Prácticos",
+      "items": [
+        {
+          "id": "práctico-grep",
+          "name": "Práctico grep",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "práctico-cpmv",
+          "name": "Práctico cp/mv",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "otros-htmls",
+          "name": "Otros HTMLs",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "materiales-didácticos-teóricos",
+      "title": "Materiales Didácticos – Teóricos",
+      "items": [
+        {
+          "id": "estados-de-los-procesos",
+          "name": "Estados de los procesos",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "guía-instalación-zorin",
+          "name": "Guía instalación Zorin",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-0-pdf",
+          "name": "Unidad 0 PDF",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-1-pdf",
+          "name": "Unidad 1 PDF",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "planificaciones",
+      "title": "Planificaciones",
+      "items": [
+        {
+          "id": "planificación-anual",
+          "name": "Planificación Anual",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1B0kAMRlwkyQj4a8KlYZz797m8kzskbvQHlORIBBEGZc/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "replanificación-2025",
+          "name": "Replanificación 2025",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1B0kAMRlwkyQj4a8KlYZz797m8kzskbvQHlORIBBEGZc/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-0-módulo-introductorio",
+          "name": "Unidad 0 – Módulo Introductorio",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1FUv--YfMHbP9ZCP0tlIlrQWDzp82XRSOHlMZou90NYc/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-1-fundamentos",
+          "name": "Unidad 1 – Fundamentos",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/17-lZdl6KSMZuTX7LViWfPbI9KhREVBkk5MP-y_aYh-I/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-2-virtualización",
+          "name": "Unidad 2 – Virtualización",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1-GCrI22EqLVd6JqiUfHJea1K4aJDpb2oe3H6DLfZnxM/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-3-procesos",
+          "name": "Unidad 3 – Procesos",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1zFw9oQhM_6M-EPFkxao9_wezJ6KpJ3GLz_XY4TWWOuQ/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-4-sistema-de-archivos",
+          "name": "Unidad 4 – Sistema de archivos",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1JYzh3YN_Dy00v-jj5XkbmcOzDzBe297LixHN_L-JAoY/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-5-usuarios-y-permisos",
+          "name": "Unidad 5 – Usuarios y permisos",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1iCPtMLdvuEpyuTWPEDlhjjtXef6JED8f8Mq74M-aJnk/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "unidad-6-scripting",
+          "name": "Unidad 6 – Scripting",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1mK5qnuVG4rl-OefHREZnnvDzTxy34O3vHP3rUq93wKA/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "clase-observada-2110",
+          "name": "Clase Observada 21/10",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "presentaciones-reveal",
+      "title": "Presentaciones Reveal",
+      "items": [
+        {
+          "id": "revealjs-por-unidad-u0-u6",
+          "name": "Reveal.js por Unidad (U0-U6)",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "rúbricas",
+      "title": "Rúbricas",
+      "items": [
+        {
+          "id": "rúbricas-de-evaluación",
+          "name": "Rúbricas de evaluación",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "id": "visitas",
+      "title": "Visitas",
+      "items": [
+        {
+          "id": "1ª-visita-135",
+          "name": "1ª Visita 13/5",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1E7oD3JSwYDokFvnF1kk-e0N0-zPyThOb42M-ZyuNQ4Q/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "2ª-visita-176",
+          "name": "2ª Visita 17/6",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1aX-hbWcmGnHa1EvgGIM4BoiaseDkKnMIjzbc8FZmaRc/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "3ª-visita",
+          "name": "3ª Visita",
+          "type": "nan",
+          "url": "https://docs.google.com/document/d/1o9nPjvPuBXqMvs41_raYQZxmk89FzJsy8kVqq1k-mQY/edit?usp=sharing",
+          "desc": "nan",
+          "draft": false
+        },
+        {
+          "id": "4ª-visita-2110",
+          "name": "4ª Visita 21/10",
+          "type": "nan",
+          "url": "nan",
+          "desc": "nan",
+          "draft": false
+        }
+      ]
+    }
+  ],
+  "timeline": []
+}
