@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Docente - Eros Sosa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --accent-color: #00e676;
+        --subtle-color: #888;
+        --border-color: #333;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        line-height: 1.6;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            rgba(0, 230, 118, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(0, 230, 118, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 20px 20px;
+        opacity: 0.1;
+        z-index: -1;
+        animation: background-pan 60s linear infinite;
+      }
+
+      @keyframes background-pan {
+        from {
+          background-position: 0% 0%;
+        }
+        to {
+          background-position: 100% 100%;
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .header {
+        background-color: var(--bg-color);
+        padding: 20px;
+        border-bottom: 2px solid var(--accent-color);
+        box-shadow: 0 2px 10px rgba(0, 230, 118, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-list {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-item a {
+        font-family: "Roboto Mono", monospace;
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav-item a:hover {
+        color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-family: "Roboto Mono", monospace;
+        font-size: 3em;
+        text-transform: uppercase;
+        color: var(--accent-color);
+        text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        animation: fadeInText 1.5s ease-in-out;
+      }
+
+      .hero p {
+        max-width: 800px;
+        font-size: 1.2em;
+        color: var(--subtle-color);
+        animation: fadeInText 1.5s ease-in-out 0.5s forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeInText {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Sections */
+      section {
+        padding: 60px 0;
+        border-bottom: 1px dashed var(--border-color);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: sectionFadeIn 0.8s ease-out forwards;
+      }
+
+      @keyframes sectionFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h2 {
+        font-family: "Roboto Mono", monospace;
+        font-size: 2.2em;
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 10px;
+        margin-bottom: 40px;
+      }
+
+      h3 {
+        font-family: "Roboto Mono", monospace;
+        font-size: 1.5em;
+        color: var(--text-color);
+        margin-top: 30px;
+      }
+
+      p,
+      ul,
+      li {
+        font-family: "Poppins", sans-serif;
+        color: var(--text-color);
+      }
+
+      a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        color: #fff;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background-color: #1e1e1e;
+        border: 1px solid var(--border-color);
+        border-left: 5px solid var(--accent-color);
+        padding: 20px;
+        border-radius: 8px;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 230, 118, 0.2);
+      }
+
+      .card h4 {
+        font-family: "Roboto Mono", monospace;
+        font-size: 1.1em;
+        color: var(--accent-color);
+        margin-top: 0;
+      }
+
+      .card p {
+        font-size: 0.9em;
+        color: var(--subtle-color);
+      }
+
+      .card-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--text-color);
+        background-color: var(--accent-color);
+        padding: 8px 16px;
+        border-radius: 5px;
+        font-family: "Roboto Mono", monospace;
+        transition: all 0.3s;
+      }
+
+      .card-link:hover {
+        background-color: #00b359;
+        transform: scale(1.05);
+      }
+
+      /* Modal Styles */
+      .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border: 2px solid var(--accent-color);
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+        position: relative;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .close-button:hover {
+        color: var(--accent-color);
+      }
+
+      .modal-frame {
+        width: 100%;
+        height: 80vh;
+        border: none;
+      }
+
+      /* Timeline styles */
+      .timeline {
+        position: relative;
+        margin: 40px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: var(--accent-color);
+        transform: translateX(-50%);
+        animation: pulse 4s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(0, 230, 118, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+        }
+      }
+
+      .timeline-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .timeline-item-left,
+      .timeline-item-right {
+        width: 45%;
+        padding: 20px;
+        background-color: #1e1e1e;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .timeline-item-left:hover,
+      .timeline-item-right:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 230, 118, 0.2);
+      }
+
+      .timeline-item-right {
+        margin-left: 55%;
+      }
+
+      .timeline-item-left::after,
+      .timeline-item-right::after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: var(--accent-color);
+        border-radius: 50%;
+        top: 25px;
+        border: 3px solid var(--bg-color);
+        z-index: 1;
+      }
+
+      .timeline-item-left::after {
+        right: -8px;
+      }
+
+      .timeline-item-right::after {
+        left: -8px;
+      }
+
+      .timeline-item-icon {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        background-color: var(--bg-color);
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        color: var(--accent-color);
+        animation: pulse-icon 4s infinite;
+      }
+
+      @keyframes pulse-icon {
+        0% {
+          transform: scale(1) translateX(-50%);
+        }
+        50% {
+          transform: scale(1.1) translateX(-50%);
+        }
+        100% {
+          transform: scale(1) translateX(-50%);
+        }
+      }
+
+      .timeline-date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 0.9em;
+        color: var(--accent-color);
+      }
+
+      .timeline-title {
+        font-family: "Roboto Mono", monospace;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 5px 0;
+        color: #fff;
+      }
+
+      .timeline-summary {
+        font-size: 0.9em;
+        color: var(--subtle-color);
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 40px 0;
+        border-top: 2px solid var(--border-color);
+        margin-top: 40px;
+      }
+
+      .logos-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 20px;
+      }
+
+      .logos-container img {
+        height: 70px;
+        filter: grayscale(100%) brightness(0.7);
+        transition: all 0.3s;
+      }
+
+      .logos-container img:hover {
+        filter: grayscale(0%) brightness(1);
+      }
+
+      /* Media Queries for responsiveness */
+      @media (max-width: 768px) {
+        .nav-list {
+          flex-direction: column;
+        }
+        .nav-item a {
+          padding: 5px 0;
+        }
+        .timeline::before {
+          left: 20px;
+          transform: none;
+        }
+        .timeline-item-left,
+        .timeline-item-right {
+          width: 100%;
+          margin-left: 0;
+          padding: 15px 15px 15px 35px;
+        }
+        .timeline-item-left::after,
+        .timeline-item-right::after {
+          left: 13px;
+          right: auto;
+        }
+        .timeline-item-icon {
+          display: none;
+        }
+        .hero h1 {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home">Inicio</a></li>
+          <li class="nav-item"><a href="#timeline">Línea de Tiempo</a></li>
+          <li class="nav-item"><a href="#about">Información</a></li>
+          <li class="nav-item"><a href="#materials">Materiales</a></li>
+          <li class="nav-item"><a href="#reflection">Reflexión</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="home" class="hero">
+        <h1>Eros Sosa | Portafolio Docente</h1>
+        <p>
+          Bienvenido al registro de un año de aprendizaje y evolución. Este
+          portafolio documenta mi práctica docente en **Sistemas Operativos II**
+          en la **UTU ISBO**, fusionando la rigurosidad académica con la
+          creatividad digital.
+        </p>
+      </section>
+
+      <section id="timeline">
+        <h2>Línea de Tiempo del Curso</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-03-07</div>
+              <div class="timeline-title">
+                Presentación del curso e intro a GNU/Linux
+              </div>
+              <div class="timeline-summary">
+                Objetivos, normas, rol del SO, primeros comandos (`ls`, `cd`,
+                `mkdir`).
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-03-11</div>
+              <div class="timeline-title">
+                Software libre vs propietario (video + debate)
+              </div>
+              <div class="timeline-summary">
+                Análisis ético/técnico del SL; discusión guiada; reflexión
+                individual.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-03-14</div>
+              <div class="timeline-title">
+                Evaluación diagnóstica + activación de saberes
+              </div>
+              <div class="timeline-summary">
+                Diagnóstico inicial; lluvia de ideas sobre SO; mini debate.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-03-18</div>
+              <div class="timeline-title">
+                Línea de tiempo de la historia de los SO + debate
+              </div>
+              <div class="timeline-summary">
+                Producción grupal y defensa de posturas; criterios de
+                investigación y argumentación.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-03-21</div>
+              <div class="timeline-title">Paro docente</div>
+              <div class="timeline-summary">Sin dictado.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-03-25</div>
+              <div class="timeline-title">
+                Presentación de líneas de tiempo (1)
+              </div>
+              <div class="timeline-summary">
+                Exposición de grupos y debate guiado.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-03-28</div>
+              <div class="timeline-title">
+                Presentación de líneas de tiempo (2) y cierre
+              </div>
+              <div class="timeline-summary">
+                Exposiciones restantes; reflexión final.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-04-01</div>
+              <div class="timeline-title">
+                SO en la vida real (investigación guiada)
+              </div>
+              <div class="timeline-summary">
+                Analizar SO reales; hoja de trabajo por equipo.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-04-04</div>
+              <div class="timeline-title">Exposiciones grupales de SO</div>
+              <div class="timeline-summary">
+                Comparación entre sistemas analizados; síntesis guiada.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-04-08</div>
+              <div class="timeline-title">Arquitecturas de SO</div>
+              <div class="timeline-summary">
+                Monolítica, microkernel, cliente-servidor, en capas; análisis
+                por equipos.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-04-11</div>
+              <div class="timeline-title">Comparativa de arquitecturas</div>
+              <div class="timeline-summary">
+                Debate y tabla colaborativa; reflexión individual por contexto
+                (móvil, servidor, consola).
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-04-15</div>
+              <div class="timeline-title">Diseña tu SO ideal</div>
+              <div class="timeline-summary">
+                Pitch técnico: arquitectura elegida + justificación +
+                componentes.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-04-18</div>
+              <div class="timeline-title">Introducción a procesos</div>
+              <div class="timeline-summary">
+                Estados de proceso; ciclo de vida; actividad de clasificación.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-04-25</div>
+              <div class="timeline-title">
+                Planificación del CPU (FIFO, SJF, RR)
+              </div>
+              <div class="timeline-summary">
+                Resolución de ejercicios con Gantt; defensa de solución.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-04-29</div>
+              <div class="timeline-title">
+                Evaluación diagnóstica/formativa de unidad
+              </div>
+              <div class="timeline-summary">
+                Instrumento en plataforma; contenidos de fundamentos, procesos y
+                SL.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-05-02</div>
+              <div class="timeline-title">
+                Virtualización + instalación Zorin en VM
+              </div>
+              <div class="timeline-summary">
+                Creación VM; instalación guiada; primeros comandos.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-05-06</div>
+              <div class="timeline-title">
+                Procesos en terminal (`ps`/`grep`/`kill`)
+              </div>
+              <div class="timeline-summary">
+                Observación/creación/finalización de procesos; lectura de
+                `STAT`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-05-09</div>
+              <div class="timeline-title">Sin alumnos (reunión profesores)</div>
+              <div class="timeline-summary">
+                Replanificar secuencia de terminal.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-05-13</div>
+              <div class="timeline-title">
+                Estructura de archivos y directorios (`mkdir`/`touch`/`mv`)
+              </div>
+              <div class="timeline-summary">
+                Construcción de jerarquía; error intencional y resolución (`rm
+                -r`).
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-05-16</div>
+              <div class="timeline-title">Árbol de directorios + `tree`</div>
+              <div class="timeline-summary">
+                Jerarquía `/`, `/home`, `/etc`; análisis colaborativo; creación
+                con `tree`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-05-20</div>
+              <div class="timeline-title">
+                Redirección y concatenación (`>`, `>>`, `cat`)
+              </div>
+              <div class="timeline-summary">
+                Generar y combinar reportes; casos de uso (logs).
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-05-23</div>
+              <div class="timeline-title">Redirección II: archivo resumen</div>
+              <div class="timeline-summary">
+                Integración de múltiples archivos; validación con `cat`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-05-27</div>
+              <div class="timeline-title">
+                Evaluación práctica integradora (Unidad 4)
+              </div>
+              <div class="timeline-summary">
+                Desafío en terminal: org. directorios, búsqueda, redirección.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-05-30</div>
+              <div class="timeline-title">
+                Rutas absolutas/relativas + navegación
+              </div>
+              <div class="timeline-summary">
+                Refuerzo de `ls`, `cd`, `pwd`, `mkdir`, `touch`; recurso visual
+                de árbol.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-06-03</div>
+              <div class="timeline-title">Inasistencia justificada</div>
+              <div class="timeline-summary">
+                Sin dictado (urgencia familiar).
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-06-06</div>
+              <div class="timeline-title">Editor `nano` (I)</div>
+              <div class="timeline-summary">
+                Crear/editar/guardar/salir; atajos `Ctrl+O` / `Ctrl+X`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-06-10</div>
+              <div class="timeline-title">Editor `nano` (II)</div>
+              <div class="timeline-summary">
+                Edición estructurada; prevención de sobrescritura.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-06-13</div>
+              <div class="timeline-title">Lectura técnica en terminal</div>
+              <div class="timeline-summary">
+                Revisión/estructura de archivos; antesala de `grep`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-06-17</div>
+              <div class="timeline-title">
+                `grep` (I): patrones y opciones `-i` `-v` `-c`
+              </div>
+              <div class="timeline-summary">
+                Resolución en duplas con archivo de registros; bitácora
+                reflexiva.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-06-20</div>
+              <div class="timeline-title">`grep` (II): aplicación y cierre</div>
+              <div class="timeline-summary">
+                Búsqueda e interpretación de patrones; reflexión final.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-06-24</div>
+              <div class="timeline-title">
+                Lectura técnica y anticipación de búsqueda
+              </div>
+              <div class="timeline-summary">
+                Dificultad de encontrar info en archivos extensos.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-06-27</div>
+              <div class="timeline-title">`nano` (III) + casos reales</div>
+              <div class="timeline-summary">
+                Errores de sobrescritura y nombres; consolidación.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-07-02</div>
+              <div class="timeline-title">Vacaciones de julio</div>
+              <div class="timeline-summary">Sin dictado.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-07-04</div>
+              <div class="timeline-title">Vacaciones de julio</div>
+              <div class="timeline-summary">Sin dictado.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-07-08</div>
+              <div class="timeline-title">Vacaciones de julio</div>
+              <div class="timeline-summary">Sin dictado.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-07-11</div>
+              <div class="timeline-title">Vacaciones de julio</div>
+              <div class="timeline-summary">Sin dictado.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-07-18</div>
+              <div class="timeline-title">Feriado</div>
+              <div class="timeline-summary">Sin dictado.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-07-22</div>
+              <div class="timeline-title">Falta por fuerza mayor (art. 71)</div>
+              <div class="timeline-summary">
+                Sin dictado (urgencia familiar).
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-07-25</div>
+              <div class="timeline-title">
+                Reencuentro: repaso `grep` + `nano`
+              </div>
+              <div class="timeline-summary">
+                Resolución de ejercicios de registros; corrección de errores
+                comunes.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-07-29</div>
+              <div class="timeline-title">
+                Permisos (`chmod` simbólico/numérico)
+              </div>
+              <div class="timeline-summary">
+                Analogía fútbol; práctica en archivos/directorios.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-08-01</div>
+              <div class="timeline-title">
+                Permisos combinados + `mkdir` + `chmod`
+              </div>
+              <div class="timeline-summary">
+                Casos con errores intencionales y corrección.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-08-05</div>
+              <div class="timeline-title">
+                Integración permisos + gestión de archivos
+              </div>
+              <div class="timeline-summary">
+                Mini-proyecto con README en `nano`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-08-08</div>
+              <div class="timeline-title">
+                Video tutorial (I): proceso de resolución
+              </div>
+              <div class="timeline-summary">
+                Guion, capturas, narración, edición simple.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-08-15</div>
+              <div class="timeline-title">
+                Video tutorial (II): taller colaborativo
+              </div>
+              <div class="timeline-summary">
+                Roles (guionista/operador/relator/editor); cierre metacognitivo.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-08-19</div>
+              <div class="timeline-title">
+                Clase visitada: creación de usuarios/grupos
+              </div>
+              <div class="timeline-summary">
+                `useradd`, `passwd`, `groupadd`; buenas prácticas.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-08-22</div>
+              <div class="timeline-title">
+                Repaso permisos + usuarios existentes
+              </div>
+              <div class="timeline-summary">
+                Tipos de cuentas; `who`, `id`, `/etc/passwd`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-08-26</div>
+              <div class="timeline-title">
+                Creación de usuarios/grupos (práctica)
+              </div>
+              <div class="timeline-summary">
+                Demostración y réplica en terminal.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-08-29</div>
+              <div class="timeline-title">
+                Modificación/eliminación de cuentas
+              </div>
+              <div class="timeline-summary">
+                `usermod`, `gpasswd`, `userdel`, `groupdel`; escenarios
+                simulados.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-09-02</div>
+              <div class="timeline-title">Propiedad: `chown` / `chgrp`</div>
+              <div class="timeline-summary">
+                Asignación de propiedad; reflexión sobre trabajo multiusuario.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-09-05</div>
+              <div class="timeline-title">Depuración de casos con errores</div>
+              <div class="timeline-summary">
+                Lectura de mensajes del sistema; seguridad y responsabilidades.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-09-09</div>
+              <div class="timeline-title">
+                Integración por departamentos (estructura+permisos)
+              </div>
+              <div class="timeline-summary">Diseño colaborativo y roles.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-09-12</div>
+              <div class="timeline-title">`root` y privilegios con `sudo`</div>
+              <div class="timeline-summary">
+                Riesgos/precauciones; ética de privilegios.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-09-16</div>
+              <div class="timeline-title">
+                Evaluación práctica (usuarios y permisos)
+              </div>
+              <div class="timeline-summary">
+                Administración completa + README con pasos.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-09-19</div>
+              <div class="timeline-title">Devolución y repaso gamificado</div>
+              <div class="timeline-summary">
+                Juego de comandos; corrección de errores comunes.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-09-23</div>
+              <div class="timeline-title">Vacaciones de septiembre</div>
+              <div class="timeline-summary">Sin dictado.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-09-26</div>
+              <div class="timeline-title">Cierre Unidad 5 (coevaluación)</div>
+              <div class="timeline-summary">
+                Rúbrica, reflexión y mini presentaciones.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-09-30</div>
+              <div class="timeline-title">
+                Inicio Unidad 6: `shebang` + permisos de ejecución
+              </div>
+              <div class="timeline-summary">
+                `#!/bin/bash`; `chmod +x`; `echo`; automatización vs ejecución
+                manual.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-10-03</div>
+              <div class="timeline-title">Variables y `read`</div>
+              <div class="timeline-summary">
+                Entrada por teclado; mensajes personalizados; comentarios.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-10-07</div>
+              <div class="timeline-title">
+                Condicionales básicas (`if`/`elif`/`else`)
+              </div>
+              <div class="timeline-summary">
+                Comparadores `-eq` `-lt` `-gt` `-le` `-ge` `=`; ejercicios de
+                clasificación.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-right">
+              <div class="timeline-date">2025-10-10</div>
+              <div class="timeline-title">
+                Operadores lógicos (`&&` `||` `!`)
+              </div>
+              <div class="timeline-summary">
+                Condiciones compuestas; depuración con `echo`.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-left">
+              <div class="timeline-date">2025-10-14</div>
+              <div class="timeline-title">Repaso condicionales</div>
+              <div class="timeline-summary">
+                Corrección de scripts; flujo lógico; autoevaluación.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>Acerca de Mí y el Contexto Institucional</h2>
+        <p>
+          Soy Eros Sosa, profesor de **Sistemas Operativos II** para el grupo
+          2°MM de Bachillerato Tecnológico en Informática, en el Instituto
+          Superior Brazo Oriental (ISBO). Paralelamente, mi formación como
+          futuro docente en el INET (CFE) me permite vincular mi práctica con
+          los marcos teóricos de la pedagogía.
+        </p>
+        <p>
+          Durante mi formación en Didáctica, he sido guiado por los Profesores
+          **Adriana González** y **Mario Montesdeoca**.
+        </p>
+        <h3>Estudio del Grupo: 2°MM</h3>
+        <p>
+          El grupo 2°MM es un colectivo heterogéneo con un ritmo de aprendizaje
+          variado. Mi estrategia pedagógica se centró en contextualizar los
+          contenidos abstractos (como procesos o permisos) con ejemplos
+          cotidianos y proyectos concretos, buscando una conexión significativa
+          que fomente la **relación con el saber** (Charlot, 2001). Su
+          predisposición a las actividades prácticas y al trabajo en equipo ha
+          sido una fortaleza clave.
+        </p>
+      </section>
+
+      <section id="planning">
+        <h2>Planificación y Metodología</h2>
+        <p>
+          Mi planificación se diseñó de manera flexible y adaptativa. Cada
+          unidad didáctica se estructura en torno a actividades que promueven la
+          **evaluación formativa** (Terigi, 2010), el **aprendizaje
+          colaborativo** (Mercer, 2001) y la **lectura y escritura en el aula**
+          (Carlino, 2003).
+        </p>
+        <p>
+          Aquí tienes acceso a mi planificación anual y de unidad, que refleja
+          esta metodología. Puedes hacer clic en los enlaces para ver los
+          documentos completos.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1B0kAMRlwkyQj4a8KlYZz797m8kzskbvQHlORIBBEGZc/edit?usp=sharing"
+              target="_blank"
+              >Planificación Anual y Replanificación 2025</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1FUv--YfMHbP9ZCP0tlIlrQWDzp82XRSOHlMZou90NYc/edit?usp=sharing"
+              target="_blank"
+              >Unidad 0: Módulo Introductorio</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/17-lZdl6KSMZuTX7LViWfPbI9KhREVBkk5MP-y_aYh-I/edit?usp=sharing"
+              target="_blank"
+              >Unidad 1: Fundamentos</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1-GCrI22EqLVd6JqiUfHJea1K4aJDpb2oe3H6DLfZnxM/edit?usp=sharing"
+              target="_blank"
+              >Unidad 2: Virtualización</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1zFw9oQhM_6M-EPFkxao9_wezJ6KpJ3GLz_XY4TWWOuQ/edit?usp=sharing"
+              target="_blank"
+              >Unidad 3: Procesos</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1JYzh3YN_Dy00v-jj5XkbmcOzDzBe297LixHN_L-JAoY/edit?usp=sharing"
+              target="_blank"
+              >Unidad 4: Sistema de archivos</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1iCPtMLdvuEpyuTWPEDlhjjtXef6JED8f8Mq74M-aJnk/edit?usp=sharing"
+              target="_blank"
+              >Unidad 5: Usuarios y permisos</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1mK5qnuVG4rl-OefHREZnnvDzTxy34O3vHP3rUq93wKA/edit?usp=sharing"
+              target="_blank"
+              >Unidad 6: Scripting</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section id="materials">
+        <h2>Materiales Didácticos</h2>
+        <p>
+          Estos materiales fueron diseñados con una estética funcional y clara,
+          inspirada en las terminales de Linux, para que tuvieran coherencia con
+          el tema y fueran atractivos para los estudiantes.
+        </p>
+
+        <h3>Unidad 4: Sistema de Archivos</h3>
+        <div class="card-grid">
+          <div class="card">
+            <h4>Práctico de Grep</h4>
+            <p>
+              Un práctico con ejercicios de dificultad progresiva para dominar
+              el comando `grep`.
+            </p>
+            <button
+              class="card-link"
+              onclick="openModal('ficha_shell_ejercicios_basicos_con_soluciones.html')"
+            >
+              Ver Ficha
+            </button>
+          </div>
+        </div>
+
+        <h3>Unidad 5: Usuarios y Permisos</h3>
+        <div class="card-grid">
+          <div class="card">
+            <h4>Ficha de Usuarios y Permisos</h4>
+            <p>
+              Ficha de trabajo que profundiza en la gestión de usuarios y grupos
+              con comandos prácticos.
+            </p>
+            <button
+              class="card-link"
+              onclick="openModal('Clase_Permisos_Usuarios_Grupos.zip/Clase_Permisos_Usuarios_Grupos/ficha.html')"
+            >
+              Ver Ficha
+            </button>
+          </div>
+          <div class="card">
+            <h4>Presentación de Usuarios y Permisos</h4>
+            <p>
+              Presentación estilo terminal para la clase sobre la creación de
+              usuarios y grupos.
+            </p>
+            <button
+              class="card-link"
+              onclick="openModal('Clase_Permisos_Usuarios_Grupos.zip/Clase_Permisos_Usuarios_Grupos/presentacion.html')"
+            >
+              Ver Presentación
+            </button>
+          </div>
+        </div>
+
+        <h3>Unidad 6: Scripting</h3>
+        <div class="card-grid">
+          <div class="card">
+            <h4>Guía de Shebang</h4>
+            <p>
+              Material teórico/práctico que explica el uso de `shebang` y
+              permisos de ejecución para scripts.
+            </p>
+            <button
+              class="card-link"
+              onclick="openModal('Guia_Shebang.zip/Guia_Shebang/guia_shebang.html')"
+            >
+              Ver Guía
+            </button>
+          </div>
+          <div class="card">
+            <h4>Presentación de Shell Scripting</h4>
+            <p>
+              Presentación (`reveal.js`) para acompañar la clase de introducción
+              a la automatización.
+            </p>
+            <button
+              class="card-link"
+              onclick="openModal('Clase_Shell_Scripting.zip/Clase_Shell_Scripting/presentacion_shell.html')"
+            >
+              Ver Presentación
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="reflection">
+        <h2>Reflexión Final: Mi Crecimiento Docente</h2>
+        <p>
+          Este año en el 2°MM ha sido un laboratorio de aprendizaje constante.
+          He pasado de una planificación rígida a una más flexible, adaptando
+          los contenidos a la realidad del grupo y a su ritmo. He confirmado que
+          la desmotivación no es un destino, sino un desafío que se aborda con
+          **actividades significativas** y una conexión genuina con los
+          intereses de los estudiantes. La integración de la teoría pedagógica
+          ha sido fundamental para justificar mis decisiones en el aula.
+        </p>
+        <p>
+          La **evaluación auténtica** (Wiggins, 1998) a través de proyectos y
+          rúbricas, me ha permitido ver más allá de una nota numérica, valorando
+          el proceso y las habilidades desarrolladas. He aprendido a utilizar el
+          humor y el contexto tecnológico para crear un ambiente de confianza,
+          demostrando que la rigurosidad no está reñida con la creatividad y el
+          disfrute. Los desafíos continúan, pero ahora sé que cada error, cada
+          pregunta sin respuesta, es una oportunidad para aprender, tanto para
+          mí como para mis estudiantes. Mi rol, más que transmitir
+          conocimientos, es ser un guía en su proceso de descubrimiento.
+        </p>
+      </section>
+
+      <section id="bibliografia">
+        <h2>Bibliografía (APA 6ª ed.)</h2>
+        <ul>
+          <li>
+            Carlino, P. (2003). ¿Qué leen los profesores cuando leen los textos
+            de su formación? Un estudio de casos. Recuperado de
+            <a
+              href="http://www.paulinacarlino.com.ar/archivos/Carlino,%20P%20-%20%C2%BFQu%C3%A9%20leen%20los%20profesores.pdf"
+              target="_blank"
+              >http://www.paulinacarlino.com.ar/archivos/Carlino,%20P%20-%20%C2%BFQu%C3%A9%20leen%20los%20profesores.pdf</a
+            >
+          </li>
+          <li>
+            Charlot, B. (2001). Del "rapport au savoir" a las prácticas de
+            estudio y a las representaciones del saber. En B. Charlot, C. F.
+            Berthelot, y C. Lahire (Eds.),
+            <i
+              >La relación con el saber: una forma de analizar las prácticas
+              pedagógicas</i
+            >
+            (pp. 5-25). Buenos Aires: Paidós.
+          </li>
+          <li>
+            Mercer, N. (2001).
+            <i>Words and Minds: How We Use Language to Think Together</i>.
+            Routledge.
+          </li>
+          <li>
+            Perkins, D. (2001).
+            <i
+              >La escuela inteligente: Del adiestramiento de la memoria a la
+              educación de la mente</i
+            >. Gedisa.
+          </li>
+          <li>
+            Terigi, F. (2010).
+            <i>El saber pedagógico y la formación docente continua</i>.
+            Ministerio de Educación de la Nación.
+          </li>
+          <li>
+            Wiggins, G. P. (1998).
+            <i
+              >Educative Assessment: Designing Assessments to Inform and Improve
+              Student Performance</i
+            >. Jossey-Bass Publishers.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="logos-container">
+        <img
+          src="https://9c1f9e7c73.cbaul-cdnwnd.com/63aa7e31e74f2092d3361e598ac0f3b0/200000026-b8804b8807/LOGO-ANEP-DGETP---2021-Fondo-Transparente%20%281%29.png?ph=9c1f9e7c73"
+          alt="Logo ANEP"
+          title="ANEP"
+        />
+        <img
+          src="https://media.licdn.com/dms/image/v2/C4D1BAQF9-tmappT1Xw/company-background_10000/company-background_10000/0/1612967735179/inet_uy_cover?e=2147483647&v=beta&t=G5NQU_Q-BE8wx0hUmhFN15DGm_RIIegBp_NvyPyoQ0E"
+          alt="Logo INET"
+          title="INET"
+        />
+      </div>
+      <p>© 2025 Eros Sosa | Portafolio Docente</p>
+    </footer>
+
+    <div id="materialModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <iframe id="modalFrame" class="modal-frame"></iframe>
+      </div>
+    </div>
+
+    <script>
+      // Smooth scroll for navigation
+      document.querySelectorAll(".nav-list a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Intersection Observer for section animations
+      const sections = document.querySelectorAll("section");
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Modal functionality for materials
+      function openModal(url) {
+        const modal = document.getElementById("materialModal");
+        const iframe = document.getElementById("modalFrame");
+        iframe.src = url;
+        modal.style.display = "flex";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("materialModal");
+        const iframe = document.getElementById("modalFrame");
+        iframe.src = "";
+        modal.style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        const modal = document.getElementById("materialModal");
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+    </script>
+  </body>
+</html>
